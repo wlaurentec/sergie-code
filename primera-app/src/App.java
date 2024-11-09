@@ -1,59 +1,39 @@
 public class App {
     public static void main(String[] args) throws Exception {
 
-        /* 
-         * VARIABLES
-         * Es un espacio de memoria que tiene un nombre asociado y puede contener un valor cambiante
-         * DECLARACIÓN
-         * Asignar el tipo de dato y el nombre de la variable sin darle un valor inicial
-         * DEFINICIÓN
-         * Asignar el tipo de dato y el nombre de la variable dandole o no un valor inicial
-         * ASIGNACIÓN
-         * Darle un valor a la variable ya declarada
-         */
+        String texto = "Cuando innovas, tienes que estar preparado para que la gente te diga que estás loco!";
+        System.out.println(texto);
 
-         /* 
-          * TIPOS DE VARIABLES
-          Variables primitivas: Almacenan valores básicos
-          Enteros: byte (-128 a 127), short (-32.768 a 32.767), int (-2.147.483.648 a 2.147.483.647), long (-9.223.372.036.854.775.808 a 9.223.372.036.854.775.807)
-          Double: double (más grande)
-          Float: float (más pequeño 6 dígitos)
-          String: String
-          Boolean: boolean
-          Caracter: char
+        int longitud = texto.length();
+        System.out.println("La longitud es: " + longitud);
 
-          Variables de referencia: Almacenan direcciones de memoria que apunta a objetos
-          Variables no primitivas: Almacenan objetos
-          Arrays: String[]
-          Objetos: Object
+        char caracter = texto.charAt(0);
+        System.out.println("El caracter es: " + caracter);
 
-          */
+        String subcadena = texto.substring(0, 15);
+        System.out.println("La subcadena es: " + subcadena);
 
+        String textoMinuscula = texto.toLowerCase();
+        System.out.println("El texto en minúsculas es: " + textoMinuscula);
 
-        // TIPO DE DATOS ENTEROS
-        byte numero = 5; // Declaramos la variable
-        // TIPO DE DATOS DECIMALES
-        double decimales = 5.5524588455811446;
-        float decimales1 = 5.552458845586f;
+        String textoMayuscula = texto.toUpperCase();
+        System.out.println("El texto en mayúsculas es: " + textoMayuscula);
 
-        // TIPO DE DATOS STRING
-        char letra = 's';
+        int indice = texto.indexOf("innovas");
+        System.out.println("El índice es: " + indice);
 
-        // TIPO DE DATOS BOOLEAN
-        boolean verdadero = true;
-        boolean falso = false;
+        String textoReemplazado = texto.replace("innovas", "ideas");
+        System.out.println("El texto reemplazado es: " + textoReemplazado);
 
-        String cadena = "¿Eres una incubadora o aceleradora que busca transformar el futuro?";
+        boolean contiene = texto.contains("innovas");
+        System.out.println("El texto contiene 'innovas': " + contiene);
 
-        System.out.println("El número es: " + numero);
-        System.out.println("El número es: " + decimales);
-        System.out.println("El número es: " + decimales1);
-        System.out.println("El letra es: " + letra);
-        System.out.println("El verdadero es: " + verdadero);
-        System.out.println("El falso es: " + falso);
-        System.out.println("UTEC: " + cadena);
+        String[] palabras = texto.split(" ");
+      /*   for (String palabra : palabras) {
+            System.out.println("Palabra: " + palabra);
+        } */
 
-
+        System.out.println("Palabra en la posición 3: " + palabras[3]);
 
     }
 }

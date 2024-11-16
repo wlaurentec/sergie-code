@@ -1,39 +1,47 @@
+import java.util.Scanner;
+
 public class App {
     public static void main(String[] args) throws Exception {
 
-        String texto = "Cuando innovas, tienes que estar preparado para que la gente te diga que estás loco!";
-        System.out.println(texto);
+        int edad = 18;
 
-        int longitud = texto.length();
-        System.out.println("La longitud es: " + longitud);
+        if (edad >= 18 && edad <= 60) {
+            System.out.println("Puedes ingresar al bar");
+        } else if (edad == 18) {
+            System.out.println("Tienes 18 años, puedes ingresar al bar");
+        } else if (edad > 60) {
+            System.out.println("No puedes ingresar al bar, eres mayor de edad");
+        } else {
+            System.out.println("Eres menor de edad, No puedes ingresar al bar");
+        }
 
-        char caracter = texto.charAt(0);
-        System.out.println("El caracter es: " + caracter);
+        // ¿Que tipo de bebida te gusta?
 
-        String subcadena = texto.substring(0, 15);
-        System.out.println("La subcadena es: " + subcadena);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("¿Bienvenido a la encuesta?");
+        System.out.println("¿Qué tipo de bebida te gusta?");
+        System.out.println("1- Cerveza");
+        System.out.println("2- Vino");
+        System.out.println("3- Agua");
 
-        String textoMinuscula = texto.toLowerCase();
-        System.out.println("El texto en minúsculas es: " + textoMinuscula);
+        int opcion = scanner.nextInt();
 
-        String textoMayuscula = texto.toUpperCase();
-        System.out.println("El texto en mayúsculas es: " + textoMayuscula);
+        switch (opcion) {
+            case 1:
+                System.out.println("Te gusta la cerveza");
+                break;
+            case 2:
+                System.out.println("Te gusta el vino");
+                break;
+            case 3:
+                System.out.println("Te gusta la agua");
+                break;
+            default:
+                System.out.println("No te gusta ninguna bebida");
+                break;
+        }
 
-        int indice = texto.indexOf("innovas");
-        System.out.println("El índice es: " + indice);
-
-        String textoReemplazado = texto.replace("innovas", "ideas");
-        System.out.println("El texto reemplazado es: " + textoReemplazado);
-
-        boolean contiene = texto.contains("innovas");
-        System.out.println("El texto contiene 'innovas': " + contiene);
-
-        String[] palabras = texto.split(" ");
-      /*   for (String palabra : palabras) {
-            System.out.println("Palabra: " + palabra);
-        } */
-
-        System.out.println("Palabra en la posición 3: " + palabras[3]);
-
+        System.out.println("Gracias por participar");
+        scanner.close();
     }
 }
